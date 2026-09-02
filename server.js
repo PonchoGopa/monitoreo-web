@@ -1,18 +1,22 @@
 const express = require('express');
 const { chromium } = require('playwright');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
 // Lista de páginas a monitorear (modificable)
 const paginas = [
-    'https://google.com',
-    'https://github.com',
-    'https://test-123.com' // Agregada a propósito para probar el comportamiento de error/caída
+    'https://n127.dashboard.meraki.com/IRAPUATO/n/HVi19a_b/manage/nodes/new_list/overview?from=wireless%20overview&healthT0=1788364437.491&healthT1=1788368037.491',
+    'http://192.168.0.110/',
+    'http://192.168.0.42/',
+    'http://192.168.0.43/',
+    'http://192.168.0.213:6600/login'
 ];
 
 app.get('/monitor', async (req, res) => {
     console.log('Iniciando ronda de monitoreo...');
-    
+
     // Lanzamos un único navegador para todo el lote de páginas
     const browser = await chromium.launch({
         headless: true
@@ -20,39 +24,73 @@ app.get('/monitor', async (req, res) => {
 
     let resultados = [];
 
+    // Verificamos si existe sesión guardada de Meraki
+    const sessionFile = path.join(__dirname, 'meraki-session.json');
+    const hasSession = fs.existsSync(sessionFile);
+
+    const contextOptions = {
+        viewport: { width: 1280, height: 800 },
+        ignoreHTTPSErrors: true // Permite entrar a impresoras y dispositivos locales con HTTPS autofirmado / No Seguro
+    };
+
+    if (hasSession) {
+        contextOptions.storageState = sessionFile;
+        console.log('🔐 Cargando sesión autenticada de Cisco Meraki (meraki-session.json)...');
+    }
+
+    const context = await browser.newContext(contextOptions);
+
     try {
         for (const url of paginas) {
             console.log(`Verificando: ${url}`);
-            const page = await browser.newPage();
-            
-            // Configurar viewport responsivo y moderno
-            await page.setViewportSize({ width: 1280, height: 800 });
+            const page = await context.newPage();
 
             try {
+                // Usamos domcontentloaded para que no se quede colgado esperando conexiones continuas (WebSockets/Polling de Meraki)
                 const response = await page.goto(url, {
-                    waitUntil: 'networkidle',
-                    timeout: 25000 // 25 segundos máximo por página
+                    waitUntil: 'domcontentloaded',
+                    timeout: 40000 // 40 segundos
                 });
 
-                const status = response.status();
+                // Si es un dashboard interactivo como Meraki, damos tiempo para que rendericen los componentes y gráficas
+                if (url.includes('meraki.com')) {
+                    await page.waitForTimeout(6000);
+                } else {
+                    await page.waitForTimeout(1000);
+                }
+
+                const status = response ? response.status() : 200;
                 const titulo = await page.title();
-                const contenido = await page.content();
+                const currentUrl = page.url();
+
+                // Obtenemos solo el texto visible en pantalla (para evitar falsos positivos dentro de archivos JS o scripts)
+                let textoVisible = '';
+                try {
+                    textoVisible = await page.locator('body').innerText({ timeout: 5000 });
+                } catch (e) {
+                    textoVisible = await page.content();
+                }
 
                 let erroresDetectados = [];
 
+                // Validación de sesión en Meraki (si nos manda a login)
+                if (url.includes('meraki.com') && (currentUrl.includes('/login') || titulo.toLowerCase().includes('log in'))) {
+                    erroresDetectados.push('Sesión de Meraki no iniciada o expirada. Ejecuta "node login-meraki.js" para renovarla.');
+                }
+
                 // Validaciones de estado HTTP
-                if (status !== 200) {
+                if (status && status >= 400) {
                     erroresDetectados.push(`HTTP Status ${status}`);
                 }
 
-                // Validaciones de contenido HTML común de errores
-                if (contenido.includes('Internal Server Error')) {
-                    erroresDetectados.push('Internal Server Error');
+                // Validaciones de texto de error real visible en pantalla
+                if (textoVisible.includes('500 Internal Server Error') || textoVisible.includes('502 Bad Gateway') || textoVisible.includes('503 Service Unavailable')) {
+                    erroresDetectados.push('Error en Servidor (500 / 502 / 503)');
                 }
-                if (contenido.includes('Access denied')) {
-                    erroresDetectados.push('Access denied');
+                if (textoVisible.includes('Access Denied') && !url.includes('meraki.com')) {
+                    erroresDetectados.push('Acceso Denegado (Access Denied)');
                 }
-                if (contenido.includes('Fatal Error')) {
+                if (textoVisible.includes('Fatal error:')) {
                     erroresDetectados.push('Fatal Error');
                 }
 
@@ -69,19 +107,34 @@ app.get('/monitor', async (req, res) => {
                     status,
                     titulo,
                     erroresDetectados,
-                    screenshotBase64 // Este string se envía a n8n para adjuntarlo al correo
+                    screenshotBase64
                 });
 
             } catch (error) {
                 console.error(`Error procesando ${url}:`, error.message);
                 
-                // Si falla la carga, intentamos tomar captura de lo que se haya cargado
+                // Si falla la carga, renderizamos una tarjeta de error limpia
                 let screenshotBase64 = null;
                 try {
-                    const screenshotBuffer = await page.screenshot({ fullPage: true, type: 'png' });
+                    const errorPage = await browser.newPage();
+                    await errorPage.setViewportSize({ width: 1000, height: 600 });
+                    await errorPage.setContent(`
+                        <html>
+                          <body style="font-family: Arial, sans-serif; background-color: #1a1a1a; color: #ffffff; padding: 40px; text-align: center;">
+                            <h1 style="color: #ff4d4f; font-size: 26px;">⚠️ Fallo de Conexión / Monitoreo</h1>
+                            <h2 style="color: #cccccc; font-weight: normal; word-break: break-all;">${url}</h2>
+                            <div style="background: #2a2a2a; border-left: 4px solid #ff4d4f; padding: 20px; border-radius: 6px; display: inline-block; margin-top: 20px; text-align: left; max-width: 700px;">
+                              <p style="color: #ff7875; font-family: Consolas, monospace; margin: 0; font-size: 14px;">${error.message}</p>
+                            </div>
+                            <p style="margin-top: 25px; color: #777777; font-size: 12px;">Captura generada automáticamente por el monitor de inicio de turno.</p>
+                          </body>
+                        </html>
+                    `);
+                    const screenshotBuffer = await errorPage.screenshot({ fullPage: true, type: 'png' });
                     screenshotBase64 = screenshotBuffer.toString('base64');
+                    await errorPage.close();
                 } catch (snapError) {
-                    // Si no se puede tomar captura (ej: DNS no resuelto) queda en null
+                    console.error('No se pudo generar captura de error:', snapError.message);
                 }
 
                 resultados.push({

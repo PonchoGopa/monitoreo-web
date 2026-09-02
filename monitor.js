@@ -72,7 +72,7 @@ async function verificarPagina(url) {
 (async () => {
 
     const paginas = [
-        'https://google.com',
+        'https://www.google.com/',
         'https://github.com'
     ];
 
