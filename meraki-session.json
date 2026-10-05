@@ -2,17 +2,17 @@
   "cookies": [
     {
       "name": "__cf_bm",
-      "value": "UcQznBjBxbXFFBLHLPZ_QdCB3SNl0g1DZ169NNCvtqc-1788375475.7571092-1.0.1.1-H8Bw3DfKOQPbgZOgSFugsVTdtz_6hw6D53IAEozetnapGmC9Tqp.HD0GM0XcjahHHkJ1VKNhWs5hZFgkRXNDvgC2L1jXnTCeysrRw3PxCjFTqgEiTfQHi0cu93cQdsoS",
+      "value": "iy6lprapvUYwOAj8Gwmhsb.pvbcGiWcFyw.xS0GJWdk-1791204724.2712257-1.0.1.1-IMiunXB7krC0ANQwmBDfOZx4BspUrc9IHiUQBb23GdnuyHX65z08dlnAi0O43iTYkoKXpTxhS0pG8D1KjFsLcv96qdUN4JtP2IxqWivAep17hUYHAn1oeWzUfQq8huRO",
       "domain": ".dashboard.meraki.com",
       "path": "/",
-      "expires": 1788377274.217473,
+      "expires": 1791206521.396484,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_session_id_for_n88",
-      "value": "dabee3cae90085c43287dfde1546e6ee",
+      "value": "afa8837a085f4c0d2d5443377a91a633",
       "domain": "n88.dashboard.meraki.com",
       "path": "/",
       "expires": -1,
@@ -22,17 +22,17 @@
     },
     {
       "name": "two_factor_auth",
-      "value": "MGgRbRLDBmWDGaq0Ei.PWw6PQpokMg7Njg3lhfJa8H9AB1qC6nmJ64DOboYGL1M4cnoDuhnLim-sHg3_hc9Hw.2g3ctV37aKWBMS0VTgyI7Q",
+      "value": "MGQpA3T-CA7qoAsBad.Id8ClEQ3fEGaeRhixJe6lK9j13UPC79anKN8dtmxa2pNmUbFHugYScqsh5JWPNopeg.re3dlRhkq0iLV8T1_u86vg",
       "domain": ".meraki.com",
       "path": "/",
-      "expires": 1790967559.584076,
+      "expires": 1793886808.487651,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "dash_auth",
-      "value": "MGl-5shXuRAqb3OrHF.v9dkXLJl23ux74tb1DN1y-W9IxqjilTxLlhnpsY4uDHIRddODelfOmGjjXWCR11MeNJ-J-aXHdB7VDSdak-JybzvtrCuGGlxWfr99ZyPewqB5pExD9WADUbxRhTOEwXRXEKkx4THnk8uJs4qpJaeZRvOH8lc7ifGFY9uI7svd2RPtfvAn_4z7NMU-CDlpb7EARB85tPseBSPxVZ3TWGLNbL60-LKdZRobNIj-dM0XFsbU0Acaw-eQgT67_UCgd03AJtm9FPwJeGUUImEp22tXV1_0Xy8fE04vQF69NDcyCdr9Ak9nFlisEyp.ACvxFk0XEmGZFZSKx77lqQ",
+      "value": "MGyJCt6BOqxM7n2PN5.2_zT8aTCUqHmZeW2VsX_ksVm3ancmHQWBOoB700SNa0LQ5GDAVWPKYYPKNTOEOPpj_jEUW_UkJceTFXkoRkHmxkVXGXt4X-6CbQ_OXPy0WKllTUH7nfGMq1tz7-HJDMC4znByHWJ6A9bLJm7fDTQKq6MurWB6yGMPzT70MxBLXwRqFNKTVGQGN66KO1JD7urg8CGlIUifJrHXBMHXaEmU6gwypoYr5p7FbAU2Jk4gmoxE9HtuufWKGEKHSFBN8Lx4jUReV8_plzlFFhegkvTbWHZYxJXQD-dy3WXpqapX5PoPuNurfz-Epwi.lrTGHacuCP2TndnzWIPr1A",
       "domain": ".meraki.com",
       "path": "/",
       "expires": -1,
@@ -42,7 +42,7 @@
     },
     {
       "name": "_session_id_for_n127",
-      "value": "67f73db784735157beae1dc32b91a847",
+      "value": "f9f7cc92a94c640cf32730f1c7ae597e",
       "domain": "n127.dashboard.meraki.com",
       "path": "/",
       "expires": -1,
@@ -52,10 +52,10 @@
     },
     {
       "name": "_gid",
-      "value": "GA1.2.1529572529.1788375564",
+      "value": "GA1.2.1273424538.1791204811",
       "domain": ".meraki.com",
       "path": "/",
-      "expires": 1788461968,
+      "expires": 1791291217,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -65,47 +65,47 @@
       "value": "1",
       "domain": ".meraki.com",
       "path": "/",
-      "expires": 1788375623,
+      "expires": 1791204870,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
-      "name": "OptanonConsent",
-      "value": "isGpcEnabled=0&datestamp=Wed+Sep+02+2026+12%3A59%3A26+GMT-0600+(hora+est%C3%A1ndar+central)&version=202601.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=94c3bf53-7c57-42da-96c2-71dba22f7df4&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=1%3A1%2C2%3A1%2C3%3A1%2C4%3A1&crTime=1788375559592&AwaitingReconsent=false",
-      "domain": ".meraki.com",
-      "path": "/",
-      "expires": 1819911566,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "INGRESSCOOKIE",
-      "value": "\"ChIxMC4zOC4xMDYuMjU0OjUwMDAQxbHdAQ==\"",
+      "value": "\"ChExMC4zOC44Ny4yNDU6NTAwMBDh147WBg==\"",
       "domain": "n127.dashboard.meraki.com",
       "path": "/",
-      "expires": 1788379167.09921,
+      "expires": 1791208414.874143,
       "httpOnly": true,
       "secure": false,
       "sameSite": "Lax"
     },
     {
-      "name": "_ga",
-      "value": "GA1.1.1891182006.1788375564",
+      "name": "OptanonConsent",
+      "value": "isGpcEnabled=0&datestamp=Mon+Oct+05+2026+06%3A53%3A36+GMT-0600+(hora+est%C3%A1ndar+central)&version=202601.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=876eab16-bf53-4c1d-8358-a4189c777042&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=1%3A1%2C2%3A1%2C3%3A1%2C4%3A1&AwaitingReconsent=false",
       "domain": ".meraki.com",
       "path": "/",
-      "expires": 1822935569.219921,
+      "expires": 1822740816,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1543643641.1791204811",
+      "domain": ".meraki.com",
+      "path": "/",
+      "expires": 1825764817.298371,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_DG2DVWGCGW",
-      "value": "GS2.1.s1788375569$o1$g0$t1788375569$j60$l0$h0",
+      "value": "GS2.1.s1791204814$o1$g1$t1791204817$j57$l0$h0",
       "domain": ".meraki.com",
       "path": "/",
-      "expires": 1822935569.637827,
+      "expires": 1825764817.327637,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -117,47 +117,47 @@
       "localStorage": [
         {
           "name": "_pendo_accountId.b64f3b9b-0b50-41cb-bbeb-2bc192917594",
-          "value": "{\"ttl\":1797015569245,\"value\":\"908460\"}"
+          "value": "{\"ttl\":1799844816717,\"value\":\"908460\"}"
         },
         {
           "name": "NRBA_SESSION",
-          "value": "{\"value\":\"09536a4eed6c01ac\",\"inactiveAt\":1788377364377,\"expiresAt\":1788389964377,\"updatedAt\":1788375569620,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"logApiMode\":0,\"serverTimeDiff\":-1736,\"custom\":{},\"numOfResets\":0,\"consent\":false}"
+          "value": "{\"value\":\"d1ddad92beceaf3f\",\"inactiveAt\":1791206612727,\"expiresAt\":1791219212727,\"updatedAt\":1791204816917,\"sessionReplayMode\":0,\"sessionReplaySentFirstChunk\":false,\"sessionTraceMode\":0,\"traceHarvestStarted\":false,\"loggingMode\":0,\"logApiMode\":0,\"serverTimeDiff\":-2965,\"custom\":{},\"numOfResets\":0,\"consent\":false}"
         },
         {
           "name": "axios-cache:1000048313",
-          "value": "{\"state\":\"cached\",\"ttl\":60000,\"createdAt\":1788375569618,\"data\":{\"data\":{\"view\":{\"globalOverview\":true,\"mspPortal\":true,\"canViewAllNetworks\":true},\"write\":{\"organization\":true,\"createNetworks\":true}},\"status\":200,\"statusText\":\"\",\"headers\":{\"cache-control\":\"no-cache, no-store\",\"cf-cache-status\":\"DYNAMIC\",\"cf-ray\":\"a34ec0975e88f149-IAH\",\"content-encoding\":\"gzip\",\"content-type\":\"application/json; charset=utf-8\",\"date\":\"Wed, 02 Sep 2026 18:59:31 GMT\",\"etag\":\"W/\\\"e858623946d0fcf5a0756f7535e42cd9\\\"\",\"expires\":\"Fri, 01 Jan 1990 00:00:00 GMT\",\"pragma\":\"no-cache\",\"referrer-policy\":\"strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"strict-transport-security\":\"max-age=31536000; includeSubDomains\",\"vary\":\"Accept-Encoding\",\"x-content-type-options\":\"nosniff\",\"x-download-options\":\"noopen\",\"x-frame-options\":\"sameorigin\",\"x-permitted-cross-domain-policies\":\"none\",\"x-request-id\":\"627e830811e3318d5bb6ddf7ff28c498\",\"x-robots-tag\":\"none\",\"x-runtime\":\"0.068771\",\"x-xss-protection\":\"1; mode=block, 1; mode=block\"},\"meta\":{\"revalidation\":{\"etag\":\"W/\\\"e858623946d0fcf5a0756f7535e42cd9\\\"\"},\"vary\":{}}}}"
+          "value": "{\"state\":\"cached\",\"ttl\":60000,\"createdAt\":1791204814656,\"data\":{\"data\":{\"view\":{\"globalOverview\":true,\"mspPortal\":true,\"canViewAllNetworks\":true},\"write\":{\"organization\":true,\"createNetworks\":true}},\"status\":200,\"statusText\":\"\",\"headers\":{\"cache-control\":\"no-cache, no-store\",\"cf-cache-status\":\"DYNAMIC\",\"cf-ray\":\"a45c91fcdad64071-QRO\",\"content-encoding\":\"gzip\",\"content-type\":\"application/json; charset=utf-8\",\"date\":\"Mon, 05 Oct 2026 12:53:37 GMT\",\"etag\":\"W/\\\"e858623946d0fcf5a0756f7535e42cd9\\\"\",\"expires\":\"Fri, 01 Jan 1990 00:00:00 GMT\",\"pragma\":\"no-cache\",\"referrer-policy\":\"strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"strict-transport-security\":\"max-age=31536000; includeSubDomains\",\"vary\":\"Accept-Encoding\",\"x-content-type-options\":\"nosniff\",\"x-download-options\":\"noopen\",\"x-frame-options\":\"sameorigin\",\"x-permitted-cross-domain-policies\":\"none\",\"x-request-id\":\"582dcf6bd1ed1778f97072a93ed348df\",\"x-robots-tag\":\"none\",\"x-runtime\":\"0.056861\",\"x-xss-protection\":\"1; mode=block, 1; mode=block\"},\"meta\":{\"revalidation\":{\"etag\":\"W/\\\"e858623946d0fcf5a0756f7535e42cd9\\\"\"},\"vary\":{}}}}"
         },
         {
           "name": "_pendo_guides_blocked.b64f3b9b-0b50-41cb-bbeb-2bc192917594",
-          "value": "{\"ttl\":1788389969593,\"value\":\"0\"}"
+          "value": "{\"ttl\":1791219216883,\"value\":\"0\"}"
         },
         {
           "name": "ld:64de8e781e6a1e13f69cfe1a:$diagnostics",
-          "value": "{\"dataSinceDate\":1788375569392,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
+          "value": "{\"dataSinceDate\":1791204814382,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
         },
         {
           "name": "_pendo_visitorId.b64f3b9b-0b50-41cb-bbeb-2bc192917594",
-          "value": "{\"ttl\":1797015569245,\"value\":\"634444597505839545\"}"
+          "value": "{\"ttl\":1799844816717,\"value\":\"634444597505839545\"}"
         },
         {
           "name": "_pendo_meta.b64f3b9b-0b50-41cb-bbeb-2bc192917594",
-          "value": "{\"ttl\":1797015569247,\"value\":1115804822}"
+          "value": "{\"ttl\":1799844814331,\"value\":660520124}"
         },
         {
           "name": "axios-cache:-131828220",
-          "value": "{\"state\":\"cached\",\"ttl\":60000,\"createdAt\":1788375569570,\"data\":{\"data\":{\"id\":\"N_634444597505855979\",\"organizationId\":\"908460\",\"productTypes\":[\"wireless\"],\"url\":\"https://n127.dashboard.meraki.com/IRAPUATO/n/HVi19a_b/manage/usage/list\",\"name\":\"IRAPUATO\",\"timeZone\":\"Mexico/General\",\"enrollmentString\":null,\"tags\":[],\"notes\":\"\",\"isBoundToConfigTemplate\":false,\"isVirtual\":false,\"details\":null},\"status\":200,\"statusText\":\"\",\"headers\":{\"cache-control\":\"no-cache, no-store\",\"cf-cache-status\":\"DYNAMIC\",\"cf-ray\":\"a34ec0975e8bf149-IAH\",\"content-encoding\":\"gzip\",\"content-type\":\"application/json; charset=utf-8\",\"date\":\"Wed, 02 Sep 2026 18:59:31 GMT\",\"etag\":\"W/\\\"ffebde4eb1b7bba58bdc1c3b79c6d5e5\\\"\",\"expires\":\"Fri, 01 Jan 1990 00:00:00 GMT\",\"pragma\":\"no-cache\",\"referrer-policy\":\"strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"strict-transport-security\":\"max-age=31536000; includeSubDomains\",\"vary\":\"Accept-Encoding, Origin\",\"x-content-type-options\":\"nosniff\",\"x-download-options\":\"noopen\",\"x-frame-options\":\"sameorigin\",\"x-permitted-cross-domain-policies\":\"none\",\"x-request-id\":\"43eac4091cf2ae189d93ea7a5b50285d\",\"x-robots-tag\":\"none\",\"x-runtime\":\"0.049154\",\"x-xss-protection\":\"1; mode=block, 1; mode=block\"},\"meta\":{\"revalidation\":{\"etag\":\"W/\\\"ffebde4eb1b7bba58bdc1c3b79c6d5e5\\\"\"},\"vary\":{}}}}"
+          "value": "{\"state\":\"cached\",\"ttl\":60000,\"createdAt\":1791204814657,\"data\":{\"data\":{\"id\":\"N_634444597505855979\",\"organizationId\":\"908460\",\"productTypes\":[\"wireless\"],\"url\":\"https://n127.dashboard.meraki.com/IRAPUATO/n/HVi19a_b/manage/usage/list\",\"name\":\"IRAPUATO\",\"timeZone\":\"Mexico/General\",\"enrollmentString\":null,\"tags\":[],\"notes\":\"\",\"isBoundToConfigTemplate\":false,\"isVirtual\":false,\"details\":null},\"status\":200,\"statusText\":\"\",\"headers\":{\"cache-control\":\"no-cache, no-store\",\"cf-cache-status\":\"DYNAMIC\",\"cf-ray\":\"a45c91fcdade4071-QRO\",\"content-encoding\":\"gzip\",\"content-type\":\"application/json; charset=utf-8\",\"date\":\"Mon, 05 Oct 2026 12:53:37 GMT\",\"etag\":\"W/\\\"ffebde4eb1b7bba58bdc1c3b79c6d5e5\\\"\",\"expires\":\"Fri, 01 Jan 1990 00:00:00 GMT\",\"pragma\":\"no-cache\",\"referrer-policy\":\"strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"strict-transport-security\":\"max-age=31536000; includeSubDomains\",\"vary\":\"Accept-Encoding, Origin\",\"x-content-type-options\":\"nosniff\",\"x-download-options\":\"noopen\",\"x-frame-options\":\"sameorigin\",\"x-permitted-cross-domain-policies\":\"none\",\"x-request-id\":\"7492c951fc25f3a51af3ad9485a32dc9\",\"x-robots-tag\":\"none\",\"x-runtime\":\"0.060815\",\"x-xss-protection\":\"1; mode=block, 1; mode=block\"},\"meta\":{\"revalidation\":{\"etag\":\"W/\\\"ffebde4eb1b7bba58bdc1c3b79c6d5e5\\\"\"},\"vary\":{}}}}"
         },
         {
           "name": "_pendo_sessionId.b64f3b9b-0b50-41cb-bbeb-2bc192917594",
-          "value": "{\"sessionId\":\"1HE2sWlJP704oolV\",\"timestamp\":1788375569248}"
+          "value": "{\"sessionId\":\"4klswd48tsEGS5nP\",\"timestamp\":1791204817312}"
         },
         {
           "name": "ld:64e4fdfe8198b313bfc6e823:$diagnostics",
-          "value": "{\"dataSinceDate\":1788375564052,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
+          "value": "{\"dataSinceDate\":1791204812365,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
         },
         {
           "name": "dashboard-c3-promo-session-key",
-          "value": "\"2026-08-10T12:23:03Z\""
+          "value": "\"2026-09-24T19:02:32Z\""
         },
         {
           "name": "_pendo_utm.b64f3b9b-0b50-41cb-bbeb-2bc192917594",
@@ -170,7 +170,7 @@
       "localStorage": [
         {
           "name": "ld:64e4fdfe8198b313bfc6e823:$diagnostics",
-          "value": "{\"dataSinceDate\":1788375475346,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
+          "value": "{\"dataSinceDate\":1791204722347,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
         }
       ]
     }
