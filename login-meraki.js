@@ -33,17 +33,25 @@ const path = require('path');
             timeout: 300000 // 5 minutos máximo
         });
 
-        console.log('Autenticación detectada. Guardando cookies y tokens de sesión...');
+        console.log('Autenticación detectada. Comprobando acceso al Dashboard de Monitoreo...');
         
-        // Damos 5 segundos para que terminen de escribirse todas las cookies de sesión
-        await page.waitForTimeout(5000);
+        // Navegamos directamente a la página monitoreada para asentar las cookies del servidor específico (n127)
+        const targetUrl = 'https://n127.dashboard.meraki.com/IRAPUATO/n/HVi19a_b/manage/nodes/new_list/overview?from=wireless%20overview&healthT0=1788364437.491&healthT1=1788368037.491';
+        try {
+            await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+            await page.waitForTimeout(5000);
+        } catch (navErr) {
+            console.log('Esperando asentamiento de cookies...');
+            await page.waitForTimeout(5000);
+        }
 
         const sessionPath = path.join(__dirname, 'meraki-session.json');
         await context.storageState({ path: sessionPath });
 
         console.log('--------------------------------------------------');
-        console.log(`✅ ¡Sesión guardada con éxito en: ${sessionPath}`);
-        console.log('A partir de ahora tu monitor web entrará automáticamente al Dashboard.');
+        console.log(`✅ ¡SESIÓN RENOVADA CON ÉXITO!`);
+        console.log(`Archivo actualizado: ${sessionPath}`);
+        console.log('Tu monitor de turno continuará funcionando automáticamente.');
         console.log('--------------------------------------------------');
 
     } catch (error) {

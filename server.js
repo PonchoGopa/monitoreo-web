@@ -77,7 +77,7 @@ app.get('/monitor', async (req, res) => {
 
                 // Validación de sesión en Meraki (si nos manda a login)
                 if (url.includes('meraki.com') && (currentUrl.includes('/login') || titulo.toLowerCase().includes('log in'))) {
-                    erroresDetectados.push('Sesión de Meraki no iniciada o expirada. Ejecuta "node login-meraki.js" para renovarla.');
+                    erroresDetectados.push('Sesión de Meraki expirada. Usa el acceso directo "Renovar Sesion Meraki" en el Escritorio (o ejecuta node login-meraki.js).');
                 }
 
                 // Validaciones de estado HTTP
